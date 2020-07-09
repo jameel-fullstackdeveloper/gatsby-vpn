@@ -1,42 +1,42 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import logo from '../images/logo.png'
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const Header = () => {
+  
+  return (
+    <header  id="slider-area">  
+       <nav className="navbar navbar-expand-md scrolling-navbar bg-dark">
+        <div className="container-fluid">          
+          <Link className="navbar-brand" to="index.html">
+                <img src={logo} className="img-fluid" alt="Logo" />
+          </Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i className="lni-menu"></i>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarCollapse">
+            <ul className="navbar-nav mr-auto w-100 justify-content-end">
+              <li className="nav-item">
+                <Link className="nav-link" to="features.html">Features</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="price.html">Price</Link>
+              </li>  
+              <li className="nav-item">
+                <Link className="nav-link" to="vpnapps.html">VPN Apps</Link>
+              </li>                            
+              <li className="nav-item">
+                <Link className="nav-link" to="help.html">Help</Link>
+              </li>            
+            </ul>              
+          </div>
+        </div>
+      </nav> 
+     
+    </header>
+  )
+  }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
